@@ -1,1 +1,21 @@
-Componentes.
+  COMPONENTES
+
+Archivo app.component.ts.
+Un componente está compuesto por:
+  · Una serie de imports que son módulos u objectos que tenemos que importar para poder utilizarlos.
+  · Sintaxis 
+             -> import {Componente} from localizacionAplicacion.
+             -> Decorador. Donde configuramos el componente.
+                            @Componente({
+                              selector: etiqueta donde se ejecutará el componente,
+                              templateUrl: vista del componente,
+                              styleUrls: [estilos del compononente]})
+                              
+                             //Para poder utilizar el componente en otra clase
+                             export class AppComponente {
+                             propiedad = "Prueba";
+                             }
+                             
+Para que un componente funcione utilizamos el archivo app.module.ts
+                              
+  
