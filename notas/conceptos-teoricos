@@ -2,10 +2,12 @@ CONCEPTOS TEÓRICOS.
 
 Una aplicación de Angular está compuesta por componentes, plantillas, decoradoradores y metadatos, servicios, providers, pro directivas y por módulos.
 
-  ·Componentes. Similar a lo que es un controlador en Java. Sirve para mediante métodos y propiedades de la API ir gestionando las pantallas. 
+  · Componentes. Similar a lo que es un controlador en Java. Sirve para mediante métodos y propiedades de la API ir gestionando las pantallas. 
   Las aplicaciones de Angular están compuestas por diferentes componentes.
-  ·Plantillas. Ficheros html con sintaxis especial de Angular, que sirven para definir la vista de los componentes. Trabajan con Data-Binding y directrices.
-  ·Decoradorees y Metadatos. Los decoradores configuran dinamicamente atributos/metadatos de las clases y componentes. Los metadatos se utilizan para 
+  · Plantillas. Ficheros html con sintaxis especial de Angular, que sirven para definir la vista de los componentes. Trabajan con Data-Binding y directrices.
+  · Decoradores y Metadatos. Los decoradores configuran dinamicamente atributos/metadatos de las clases y componentes. Los metadatos se utilizan para 
   información de clases y componentes.
-  
+  · Servicios. Clases para la reutilización de código, con la inyección de dependencias podemos utilizarlas en otros componentes.
+  · Providers. Servicios que nos proveen de datos o funcionalidades mediante sus métodos.
+  · Directivas. Funcionalidades aplicables al DOM (Document Object Model) y a los elementos HTML en las plantillas de un componente.
     
