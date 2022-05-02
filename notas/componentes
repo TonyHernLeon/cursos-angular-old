@@ -1,21 +1,51 @@
   COMPONENTES
 
 Archivo app.component.ts.
-Un componente está compuesto por:
+Un componente (archivo de componente) está compuesto por:
   · Una serie de imports que son módulos u objectos que tenemos que importar para poder utilizarlos.
+  · Decorador para decirle como tiene que funcionar el componente.
+  · Export para poder utilizar el componente en otras clases.
   · Sintaxis 
-             -> import {Componente} from localizacionAplicacion.
-             -> Decorador. Donde configuramos el componente.
-                            @Componente({
-                              selector: etiqueta donde se ejecutará el componente,
-                              templateUrl: vista del componente,
-                              styleUrls: [estilos del compononente]})
+              <!-- imports  para utilizar objetos de la app -->
+              import {Componente} from 'localizacionEnApp';
+              <!-- Decorador. Donde configuramos el componente. -->
+              @Componente({
+                selector: etiqueta donde se ejecutará el componente,
+                templateUrl: vista del componente,
+                styleUrls: [estilos del compononente]})
                               
-                             //Para poder utilizar el componente en otra clase
-                             export class AppComponente {
-                             propiedad = "Prueba";
-                             }
+              <!-- Decorador. Para poder utilizar el componente en otra clase -->
+              export class AppComponente {
+              propiedad = "Prueba";
+              }
                              
-Para que un componente funcione utilizamos el archivo app.module.ts
+Para que un componente funcione utilizamos el archivo app.module.ts. Este archivo está compuesto por:
+  · Imports de los objetos encargados de que funcione el módulo "BrowserModule" y "NgModule", el import del componente.
+  · Decorador de NgModule. Para configurar el modulo.
+  · Export del módulo.
+  · Sintaxis
+            
+            <!-- Imports de los objetos que necesitamos para el módulo -->
+            import { BrowserModule } from '@angular/platform-browser';
+            import { NgModule } from '@angular/core';
+            
+            import { AppComponente } from 'localicacionEnApp';
+            
+            <!-- Decorador de NgModule para configurar el módulo -->
+            @NgModule ({
+              declarations: [ //Cargar componentes, pipes, directivas
+                AppComponente
+              ],
+              imports: [  //Cargar módulos de Angular que necesitemos.
+                BrowserModule
+               ],
+               providers: [], //Cargar servicios
+               bootstrap: [AppComponente] //Componente principal que se carga.
+             })
+            
+            <!-- Export para utilizar el módulo -->
+            export class AppModulo { }
+  
+    
                               
   
