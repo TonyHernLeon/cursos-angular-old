@@ -1,0 +1,17 @@
+Curso de Angular.
+
+Fundamentos. Archivos de configuración.
+
+* tslint.json -> Configuración del lint para TypeScript.
+* tsconfig.json -> Configuración de Typescript.
+* package.json -> Fichero de configuración del proyecto. Tiene scripts y dependencias.
+* angular.json -> Fichero configuración, se les indica assert. Archivos externos que queremos.
+* .gitignore -> Archivo para no commitear diferentes archivos de proyecto.
+
+
+Fundamentos. Carpetas.
+* e2e -> Para pruebas.
+* node_modules -> Donde se descargan todas las cosas.
+* src -> Carpeta que se toca en principio.
+        · main.ts - Archivo principal de código.
+        · index.html - Archivo html inicial.
