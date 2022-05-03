@@ -1,0 +1,27 @@
+Manual de comandos de GIT.
+
+Notas
+EN GIT Proyecto == Repositorio.
+EN GIT Rama = Lugar donde estamos trabajando.
+EN GIT LAS CARPETAS VACÍAS SE LAS PASA POR EL FORRO. (si quieres la carpeta utilizamos .gitkeep)
+
+Comandos
+git help -> Ayuda de git.
+git config --global -> Configuración global. Se pueden añadir más parametros para identificar al usuario.
+git config --global -e -> Editor de configuración global de git.
+git init -> Inicia un repositorio. Se hace en el directorio que queramos añadir a git y se creará una carpeta .git oculta.
+git status -> Muestra el estado del repositorio (proyecto) en el que estamos.
+git add archivoConExtension-> Para "señalar" archivos a los que haremos commit (mandar al stage). Si se pone "." cogerá todos los archivos del directorio.
+git commit -> Realiza el commit de los archivos del directorio que hayamos añadido.
+git log -> Log de git.
+(Si hay error con CRLF utilizar -> git config core.autocrlf true)
+git checkout -- . -> Reconstruye el proyecto tal y como estaba en el último commit.
+
+git branch -m nombreRamaOld nombreRamaNew -> Cambiar el nombre de la rama, se hace normalmente para cambiar master por main.
+git config --global init.defaultBranch nombreRama -> pone por defecto la rama que indicamos.
+git commit -am "Message".
+git add *.ext -> Añade todos los archivos de la misma extensión en la localización.
+git add loc/*.ext -> Añade todos los archivos de la extensión en la localización indicada.
+git add loc/ -> Añade al stage todo lo que haya en la localización y lo que cuelgue de este.
+
+
