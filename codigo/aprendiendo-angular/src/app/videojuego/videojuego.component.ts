@@ -14,4 +14,7 @@ import { Component } from "@angular/core";
 })
 export class VideojuegoComponent{
     
+    constructor(){
+        console.log("Se ha cargado el componente: VideojuegoComponent");
+    }
 }
