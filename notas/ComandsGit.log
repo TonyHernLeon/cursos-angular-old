@@ -5,23 +5,55 @@ EN GIT Proyecto == Repositorio.
 EN GIT Rama = Lugar donde estamos trabajando.
 EN GIT LAS CARPETAS VACÍAS SE LAS PASA POR EL FORRO. (si quieres la carpeta utilizamos .gitkeep)
 
+Fundamentales
+    git help -> Ayuda de git.
+    git init -> Inicia un repositorio. Se hace en el directorio que queramos añadir a git y se creará una carpeta .git oculta.
+    git diff -> Para ver cambios de un archivo con una comparación de contenido.
+    git mv oldName newName -> Para cambiar el nombre.
+    git clone --single-branch --branch nombreBranch urlRepository -> Nos descargará el código del branch que le indiquemos en concreto.
+    git status -> Muestra el estado del repositorio (proyecto) en el que estamos.
+    git commit -> Realiza el commit de los archivos del directorio que hayamos añadido.
+    git reflog -> Ver lo sucedido en orden cronológico.
 Comandos
-git help -> Ayuda de git.
-git config --global -> Configuración global. Se pueden añadir más parametros para identificar al usuario.
-git config --global -e -> Editor de configuración global de git.
-git init -> Inicia un repositorio. Se hace en el directorio que queramos añadir a git y se creará una carpeta .git oculta.
-git status -> Muestra el estado del repositorio (proyecto) en el que estamos.
-git add archivoConExtension-> Para "señalar" archivos a los que haremos commit (mandar al stage). Si se pone "." cogerá todos los archivos del directorio.
-git commit -> Realiza el commit de los archivos del directorio que hayamos añadido.
-git log -> Log de git.
+    Configuración
+        git config --global -> Configuración global. Se pueden añadir más parametros para identificar al usuario.
+        git config --global -e -> Editor de configuración global de git.
+        git config --global init.defaultBranch nombreRama -> pone por defecto la rama que indicamos.
+        git config --global alias.nombreAlias "comandoQueQuierasAñadir" -> Para crear alias.
+    Log
+        git log -> Log de git.
+        git log --online -> Otra forma de mostrar el log.
+        git log --online --decorate --all --graph -> Otra forma de mostrar el log.
+    Add (Añadir a stage)
+        git add archivoConExtension-> Para "señalar" archivos a los que haremos commit (mandar al stage). Si se pone "." cogerá todos los archivos del directorio.
+        git add *.ext -> Añade todos los archivos de la misma extensión en la localización.
+        git add loc/*.ext -> Añade todos los archivos de la extensión en la localización indicada.
+        git add loc/ -> Añade al stage todo lo que haya en la localización y lo que cuelgue de este.
+        git status --short -> Da info más resumida del estado.
+    Branch (Ramas)
+        git branch -m nombreRamaOld nombreRamaNew -> Cambiar el nombre de la rama, se hace normalmente para cambiar master por main.
+        git checkout nombreRama -> cambia a la rama existente que le indicado.
+    Commit
+        git commit -am "Message".
+        git commit -amend -m "Mensaje" -> Para cambiar el mensaje de commit.
+    Reset
+        git reset --soft HEAD^ -> Para volver al commit antes del último commit.
+        git reset --mixed numCommit -> Sin borrar cambios de contenido desliga los archivos que se haya hecho hasta del número de commit en adelante.
+        git reset --hard numCommit -> Borra todos los cambios de contenido y desliga los archivos como con --mixed.
+Alias
+    Log Performance (y como crear alias)
+        git config --global alias.lg "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all" 
+
+Objeciones
 (Si hay error con CRLF utilizar -> git config core.autocrlf true)
 git checkout -- . -> Reconstruye el proyecto tal y como estaba en el último commit.
 
-git branch -m nombreRamaOld nombreRamaNew -> Cambiar el nombre de la rama, se hace normalmente para cambiar master por main.
-git config --global init.defaultBranch nombreRama -> pone por defecto la rama que indicamos.
-git commit -am "Message".
-git add *.ext -> Añade todos los archivos de la misma extensión en la localización.
-git add loc/*.ext -> Añade todos los archivos de la extensión en la localización indicada.
-git add loc/ -> Añade al stage todo lo que haya en la localización y lo que cuelgue de este.
+
+
+
+
+
+
+
 
 
