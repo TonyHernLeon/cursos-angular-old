@@ -37,13 +37,19 @@ Comandos
         git checkout -b nombreRama -> Crea la rama y nos situamos en ella.
         git merge nombreRama -> Se realiza la unión entre la rama donde se encuentra actualmente y la rama que se indica. nombreRama-> ramaActual
     Commit
-        git commit -am "Message".
-        git commit -amend -m "Mensaje" -> Para cambiar el mensaje de commit.
+        git commit -am "Message" -> Cuando el archivo ya esta "tracked" (en seguimiento) por parte de git, podemos ejecutar este comando que nos permite hacer el "git add" y el commit a la vez.
+        git commit -amend -m "Message" -> Para cambiar el mensaje de commit.
     Reset
         git reset --soft HEAD^ -> Para volver al commit antes del último commit.
         git reset --mixed numCommit -> Sin borrar cambios de contenido desliga los archivos que se haya hecho hasta del número de commit en adelante.
         git reset --hard numCommit -> Borra todos los cambios de contenido y desliga los archivos como con --mixed.
-        
+    Tag
+        git tag messageRelease -> Crea un tag en nuestra rama actual.
+        git tag -d messageRelease -> Borra el tag indicado.
+        git tag -> Muestra todos los tags creados.
+        git tag -a version Hastag -m "Message"-> Añadimos tag al commit que queramos.
+        git show version -> Ver más información del tag.
+               
 Alias
     Log Performance (y como crear alias)
         git config --global alias.lg "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all" 
