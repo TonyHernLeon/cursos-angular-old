@@ -4,6 +4,9 @@
   </h1>
   <p>Vamos a aprender Angular juntos</p>
 
- <videojuego></videojuego>
- <zapatillas></zapatillas>
+  <button (click)="ocultarVideojuegos(false)" *ngIf="mostrarVideojuegos">Ocultar Videojuegos</button>
+  <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrarVideojuegos">Mostrar Videojuegos</button>
+  <cursos></cursos> 
+  <videojuego *ngIf="mostrarVideojuegos"></videojuego>
+  <zapatillas></zapatillas>
 </div>
