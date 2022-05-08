@@ -1,6 +1,36 @@
 <h2>{{titulo}}</h2>
+<p>Compra las zapatillas de las mejores marcas!!! </p>
 <ul>
-    <li>Reebook Classic</li>
-    <li>Nike AirMax</li>
-    <li>Adidas SuperStar</li>
+    <li *ngFor="let m of marcas">{{m}}</li>
+</ul> 
+<p> Zapas disponibles: </p>
+<ul>
+    <li *ngFor="let z of zapatillas">
+          <span [ngStyle]= "{
+              'text-decoration': !z.stock ? 'line-through' : 'none'}">
+              {{z.nombre}} - <strong>{{z.precio}} €</strong> 
+          </span>
+            <span *ngIf="z.precio < 70"
+                [style.background]="z.precio < 70 ? 'green' : 'transparent' "
+                [style.color]="z.precio < 70 ? 'white' : 'black' ">
+                ¡¡EN OFERTA!!
+            </span>
+    </li>
 </ul>
+
+<p>El color de la mayoría de nuestras zapatillas es: </p>
+                <ul [ngSwitch]="color">
+                    <li *ngSwitchCase="'yellow'">
+                        El color predominante es el <span [ngStyle]="{'background': color}">amarillo</span>.
+                    </li>
+                    <li *ngSwitchCase="'blue'">
+                        El color predominante es el.
+                    </li>
+                    <li *ngSwitchCase="'red'">
+                        El color predominante es el  <span [ngStyle]="{'background': color}">rojo</span>.
+                    </li>
+                    <li *ngSwitchCase="'orange'">
+                        El color predominante es el  <span [ngStyle]="{'background': color}">naranja</span>.
+                    </li>
+
+                </ul>

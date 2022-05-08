@@ -1,12 +1,12 @@
-<div>
+<div [ngStyle]="{'background': config.colorBack}">
   <h1>
     Bienvenido al {{title}}!!!
   </h1>
   <p>Vamos a aprender Angular juntos</p>
 
-  <button (click)="ocultarVideojuegos(false)" *ngIf="mostrarVideojuegos">Ocultar Videojuegos</button>
+ <!-- <button (click)="ocultarVideojuegos(false)" *ngIf="mostrarVideojuegos">Ocultar Videojuegos</button>
   <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrarVideojuegos">Mostrar Videojuegos</button>
   <cursos></cursos> 
-  <videojuego *ngIf="mostrarVideojuegos"></videojuego>
+  videojuego *ngIf="mostrarVideojuegos"></videojuego>-->
   <zapatillas></zapatillas>
 </div>
