@@ -49,6 +49,17 @@ Comandos
         git tag -> Muestra todos los tags creados.
         git tag -a version Hastag -m "Message"-> Añadimos tag al commit que queramos.
         git show version -> Ver más información del tag.
+    Stach
+        git stash -> Creamos un nuevo stash.
+        git stash pop -> Tomamos el último stash que hemos añadido.
+        git stash list -> Vemos todos los stash que hemos hecho.
+        git stash clear -> Elimina todos los stash.
+        git stash apply hashStash -> Recupera la info del stash que le indicamos.
+        git stash drop hashStash -> Borramos el stash del hash que le indicamos.
+        git stash show hashStash -> Muestra algo de información del stash.
+        git stash save "Message" -> Agregamos mensaje al "commit" del stash.
+        git stash list --stat -> Muestra más info de todos los stash.
+
                
 Alias
     Log Performance (y como crear alias)
@@ -57,13 +68,3 @@ Alias
 Objeciones
 (Si hay error con CRLF utilizar -> git config core.autocrlf true)
 git checkout -- . -> Reconstruye el proyecto tal y como estaba en el último commit.
-
-
-
-
-
-
-
-
-
-
