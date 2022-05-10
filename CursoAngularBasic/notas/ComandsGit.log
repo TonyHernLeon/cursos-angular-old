@@ -1,0 +1,77 @@
+Manual de comandos de GIT.
+
+Notas
+EN GIT Proyecto == Repositorio.
+EN GIT Rama = Lugar donde estamos trabajando.
+EN GIT LAS CARPETAS VACÍAS SE LAS PASA POR EL FORRO. (si quieres la carpeta utilizamos .gitkeep)
+
+Comandos
+    Fundamentales
+        git help -> Ayuda de git.
+        git init -> Inicia un repositorio. Se hace en el directorio que queramos añadir a git y se creará una carpeta .git oculta.
+        git diff -> Para ver cambios de un archivo con una comparación de contenido.
+        git mv oldName newName -> Para cambiar el nombre.
+        git clone --single-branch --branch nombreBranch urlRepository -> Nos descargará el código del branch que le indiquemos en concreto.
+        git status -> Muestra el estado del repositorio (proyecto) en el que estamos.
+        git commit -> Realiza el commit de los archivos del directorio que hayamos añadido.
+        git reflog -> Ver lo sucedido en orden cronológico.
+    Configuración
+        git config --global -> Configuración global. Se pueden añadir más parametros para identificar al usuario.
+        git config --global -e -> Editor de configuración global de git.
+        git config --global init.defaultBranch nombreRama -> pone por defecto la rama que indicamos.
+        git config --global alias.nombreAlias "comandoQueQuierasAñadir" -> Para crear alias.
+    Log
+        git log -> Log de git.
+        git log --online -> Otra forma de mostrar el log.
+        git log --online --decorate --all --graph -> Otra forma de mostrar el log.
+    Add (Añadir a stage)
+        git add archivoConExtension-> Para "señalar" archivos a los que haremos commit (mandar al stage). Si se pone "." cogerá todos los archivos del directorio.
+        git add *.ext -> Añade todos los archivos de la misma extensión en la localización.
+        git add loc/*.ext -> Añade todos los archivos de la extensión en la localización indicada.
+        git add loc/ -> Añade al stage todo lo que haya en la localización y lo que cuelgue de este.
+        git status --short -> Da info más resumida del estado.
+    Branch - Merge (Ramas)
+        git branch -m nombreRamaOld nombreRamaNew -> Cambiar el nombre de la rama, se hace normalmente para cambiar master por main.
+        git branch -d nombreRama (-f) -> Elimina la rama que hemos creado (-f -> de manera forzada).
+        git checkout nombreRama -> cambia a la rama existente que le indicado.
+        git checkout -b nombreRama -> Crea la rama y nos situamos en ella.
+        git checkout -- nombreArchivo -> Recupera el contenido anterior del archivo.
+        git merge nombreRama -> Se realiza la unión entre la rama donde se encuentra actualmente y la rama que se indica. nombreRama-> ramaActual
+    Commit
+        git commit -am "Message" -> Cuando el archivo ya esta "tracked" (en seguimiento) por parte de git, podemos ejecutar este comando que nos permite hacer el "git add" y el commit a la vez.
+        git commit -amend -m "Message" -> Para cambiar el mensaje de commit.
+    Reset
+        git reset --soft HEAD^ -> Para volver al commit antes del último commit.
+        git reset --mixed numCommit -> Sin borrar cambios de contenido desliga los archivos que se haya hecho hasta del número de commit en adelante.
+        git reset --hard numCommit -> Borra todos los cambios de contenido y desliga los archivos como con --mixed.
+    Tag
+        git tag messageRelease -> Crea un tag en nuestra rama actual.
+        git tag -d messageRelease -> Borra el tag indicado.
+        git tag -> Muestra todos los tags creados.
+        git tag -a version Hastag -m "Message"-> Añadimos tag al commit que queramos.
+        git show version -> Ver más información del tag.
+    Stach
+        git stash -> Creamos un nuevo stash.
+        git stash pop -> Tomamos el último stash que hemos añadido.
+        git stash list -> Vemos todos los stash que hemos hecho.
+        git stash clear -> Elimina todos los stash.
+        git stash apply hashStash -> Recupera la info del stash que le indicamos.
+        git stash drop hashStash -> Borramos el stash del hash que le indicamos.
+        git stash show hashStash -> Muestra algo de información del stash.
+        git stash save "Message" -> Agregamos mensaje al "commit" del stash.
+        git stash list --stat -> Muestra más info de todos los stash.
+    Rebase
+        git rebase nombreRama -> Reordena los commits de la rama indicada, dejando los de la rama actual como más actualizados.
+        git rebase -i HEAD~x -> Realizamos rebase interactivo. 
+                · Squash - Para unir varios commit, de uno en uno, de más o menos actual.
+                · Reword - Para modificar el texto del commit.
+
+
+               
+Alias
+    Log Performance (y como crear alias)
+        git config --global alias.lg "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all" 
+
+Objeciones
+(Si hay error con CRLF utilizar -> git config core.autocrlf true)
+git checkout -- . -> Reconstruye el proyecto tal y como estaba en el último commit.
