@@ -11,6 +11,7 @@ Comandos
         git init -> Inicia un repositorio. Se hace en el directorio que queramos añadir a git y se creará una carpeta .git oculta.
         git diff -> Para ver cambios de un archivo con una comparación de contenido.
         git mv oldName newName -> Para cambiar el nombre.
+		git clone urlRepository -> Clonamos el repositorio 
         git clone --single-branch --branch nombreBranch urlRepository -> Nos descargará el código del branch que le indiquemos en concreto.
         git status -> Muestra el estado del repositorio (proyecto) en el que estamos.
         git commit -> Realiza el commit de los archivos del directorio que hayamos añadido.
