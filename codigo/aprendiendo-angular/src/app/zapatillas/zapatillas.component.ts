@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Zapatilla } from '../models/zapatillas'; 
+
 @Component({
     selector: 'zapatillas',
     templateUrl: './zapatillas.component.html'
@@ -9,6 +10,7 @@ export class ZapatillasComponent implements OnInit{
     public zapatillas: Array<Zapatilla>;
     public marcas: String[];
     public color = 'yellow';
+    public miMarca: string = "";
 
     constructor(){
         this.marcas = new Array();
@@ -35,5 +37,14 @@ export class ZapatillasComponent implements OnInit{
             }
         });
         console.log(this.marcas);
+    }
+
+    getMarca(){
+        alert(this.miMarca);
+    }
+
+    addMarca(){
+        /* Con esto añadimos al array la marca que metamos por el input */
+        this.marcas.push(this.miMarca);
     }
 }
