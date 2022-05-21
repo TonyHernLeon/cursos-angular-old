@@ -52,4 +52,8 @@ export class ZapatillasComponent implements OnInit{
         //delete this.marcas[indice];
         this.marcas.splice(indice,1);
     }
+
+    onBlur(){
+        alert("Has salido del input");
+    }
 }
