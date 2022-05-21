@@ -53,6 +53,10 @@ export class ZapatillasComponent implements OnInit{
         this.marcas.splice(indice,1);
     }
 
+    onBlur(){
+        alert("Has salido del input");
+    }
+
     showWord(){
         alert(this.miMarca);
     }
