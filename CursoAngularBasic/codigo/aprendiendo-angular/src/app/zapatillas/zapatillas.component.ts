@@ -47,4 +47,9 @@ export class ZapatillasComponent implements OnInit{
         /* Con esto añadimos al array la marca que metamos por el input */
         this.marcas.push(this.miMarca);
     }
+
+    borrarMarca(indice){
+        //delete this.marcas[indice];
+        this.marcas.splice(indice,1);
+    }
 }

@@ -7,7 +7,9 @@
 <button (click)="addMarca()"> Añadir marca</button>
 <p>Compra las zapatillas de las mejores marcas!!! </p>
 <ul>
-    <li *ngFor="let m of marcas">{{m}}</li>
+    <li *ngFor="let m of marcas; let indice = index">{{m}}
+        <button (click)="borrarMarca(indice)">Borrar</button>
+    </li>
 </ul> 
 <p> Zapas disponibles: </p>
 <ul>
